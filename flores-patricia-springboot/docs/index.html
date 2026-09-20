@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un jardín para Patricia 🌼</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="stars"></div>
+    <div class="moon"></div>
+
+    <div class="platform p1"></div>
+    <div class="platform p2"></div>
+    <div class="platform p3"></div>
+    <img class="float-flower f1" src="assets/flower_yellow.png" alt="">
+    <img class="float-flower f2" src="assets/flower_pink.png" alt="">
+    <img class="float-flower f3" src="assets/flower_purple.png" alt="">
+
+    <nav class="nav">
+      <div class="logo">🌙 <span>Patricia</span>land</div>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Un jardín escondido<br>solo para <span class="accent">Patricia</span></h1>
+      <p>
+        Un pequeño regalo interactivo: busca en el jardín de noche y
+        encuentra las flores amarillas antes de armar tu ramo. 💛
+      </p>
+      <div class="hero-buttons">
+        <a href="#jugar" class="btn btn-primary">Jugar ahora</a>
+        <a href="#como-jugar" class="btn btn-secondary">Cómo jugar</a>
+      </div>
+    </div>
+
+    <div class="hero-wave"></div>
+  </section>
+
+  <!-- ================= COMO JUGAR ================= -->
+  <section class="how" id="como-jugar">
+    <h2>Encontrar flores, <span class="accent">hecho para ti</span></h2>
+    <p>Muévete por el jardín, toca las flores amarillas y arma tu ramo. Así de simple.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="icon">🕹️</div>
+        <h3>Muévete</h3>
+        <p>Usa las teclas para caminar por el jardín en las cuatro direcciones.</p>
+        <div class="keys">
+          <span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="icon">🌼</div>
+        <h3>Encuentra</h3>
+        <p>Solo las flores <strong>amarillas</strong> cuentan. Las demás son parte del paisaje.</p>
+      </div>
+      <div class="step">
+        <div class="icon">💐</div>
+        <h3>Arma tu ramo</h3>
+        <p>Cuando encuentres las 8 flores amarillas, se arma un ramo con una sorpresa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JUEGO ================= -->
+  <section class="game-section" id="jugar">
+    <h2>El jardín de <span class="accent">Patricia</span></h2>
+    <p>Encuentra las 8 flores amarillas escondidas entre las demás 🌼</p>
+
+    <div class="game-frame">
+      <div class="game-hud">
+        <span>Ramo: <span id="found">0</span>/<span id="total">8</span></span>
+        <div class="bouquet-track" id="bouquetTrack"></div>
+      </div>
+      <canvas id="gameCanvas" width="760" height="460"></canvas>
+
+      <div class="joystick-wrap" id="joystickWrap">
+        <div class="joystick-base" id="joystickBase">
+          <div class="joystick-stick" id="joystickStick"></div>
+        </div>
+      </div>
+    </div>
+    <p class="game-hint" id="gameHint">Muévete con <strong>W A S D</strong> o las flechas.</p>
+  </section>
+
+  <footer>Hecho con 💛 para Patricia</footer>
+
+  <!-- ================= WIN OVERLAY ================= -->
+  <div id="overlay" class="overlay hidden">
+    <div class="win-card">
+      <h2>¡Encontraste todas las flores! 🌼</h2>
+      <canvas id="bouquetCanvas" width="180" height="140"></canvas>
+      <p id="mensaje">
+        ¡Feliz día, Patricia! Espero que este pequeño juego te haya sacado
+        una sonrisa. Puedes cambiar este mensaje editando la variable
+        <code>MENSAJE_FINAL</code> en <code>js/game.js</code>.
+      </p>
+      <button id="replay" class="btn">Jugar de nuevo</button>
+    </div>
+  </div>
+
+  <div id="confetti-container"></div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
